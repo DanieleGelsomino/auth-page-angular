@@ -1,0 +1,29 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+ul{
+  list-style-type: none;
+  a, .text-bluee{
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #080710;
+    font-weight: 600;
+    &:hover{
+      color: #1845ad;
+    }
+    &:focus{
+      color: #f09819;
+    }
+  }
+}
+
+.text-gray{
+  color: #bbb !important;
+  &:hover{
+    color: #aaa !important;
+  }
+}
+
+
+
+

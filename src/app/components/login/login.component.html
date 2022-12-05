@@ -1,0 +1,37 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+
+<!-- <div *ngIf="!isLoggedIn; then loginPage else welcomeUser"></div> -->
+
+<!-- <ng-template #loginPage> -->
+
+<form [formGroup]="loginform" (ngSubmit)="onSubmit(loginform)" *ngIf="!isLoggedIn$">
+  <h3>Accedi</h3>
+  <h5 class="text-center">Inserisci la tua e-mail e password
+  </h5>
+
+  <label for="email">Email</label>
+  <input type="email" placeholder="Email" name="email" formControlName="email">
+  <p *ngIf="!loginform.get('email')?.valid && loginform.get('email')?.touched" class="text-danger">inserisci email
+  </p>
+
+  <label for="password">Password</label>
+  <input type="password" placeholder="Password" name="password" formControlName="password">
+  <p *ngIf="!loginform.get('password')?.valid && loginform.get('password')?.touched" class="text-danger">inserisci
+    password
+  </p>
+
+  <button type="submit" [disabled]="!loginform.valid">Login</button>
+</form>
+<!-- </ng-template> -->
+
+<div *ngIf="isLoggedIn$">
+  <div class="welcome d-flex flex-column align-items-center">
+    <h3>Hai effettuato l'accesso!</h3>
+    <img src="../../../assets/img/task.png" alt="task">
+    <button routerLink="/user">Vai al tuo profilo</button>
+  </div>
+
+</div>

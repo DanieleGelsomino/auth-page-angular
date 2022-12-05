@@ -1,0 +1,20 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+
+<div class="user d-flex flex-column align-items-center justify-content-center" *ngIf="!isProfile; else userProfile">
+  <h2 class="mb-4">Lista Utenti</h2>
+  <div *ngFor="let user of users; index as i">
+    <a routerLink="/user/{{i}}">
+      <h5>{{user.email}} - {{user.nome}}</h5>
+    </a>
+  </div>
+  <button routerLink="/" class="btn btn-primary mt-3">torna indietro</button>
+</div>
+<ng-template #userProfile>
+  <div class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center ">
+    <h5>Profilo di {{user.email}}</h5>
+    <button routerLink="/user" class="btn btn-primary mt-2">torna indietro</button>
+  </div>
+</ng-template>

@@ -1,0 +1,17 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<form #signupform="ngForm" (ngSubmit)="onSubmit(signupform)">
+  <h3>Registrati</h3>
+  <h5 class="text-center">Inserisci i tuoi dati, e-mail e password</h5>
+
+  <label for="email">Email</label>
+  <input type="email" placeholder="Email" name="email" ngModel required email>
+
+  <label for="password">Password</label>
+  <input type="password" placeholder="Password" name="password" ngModel required>
+
+
+  <button type="submit" [disabled]="!signupform.valid">Conferma</button>
+</form>

@@ -1,0 +1,17 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+button {
+  width: 125px;
+  background-color: #23a2f6 !important;
+  color: #fff !important;
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: 600 !important;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:0.3s ease-in-out !important ;
+  &:hover{
+    transform: scale(1.1);
+  }
+
+}
